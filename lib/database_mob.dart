@@ -9,7 +9,7 @@ import 'package:realm_dart/realm.dart';
 // import 'model.dart';
 import 'model_rel.dart';
 
-final realmDBName = '../database.realm';
+final realmDBName = 'database.realm';
 
 // final prefix = 'test';
 final prefix = 'fortaleza';
@@ -35,23 +35,7 @@ FutureOr<void> initDatabase() async {
       path: realmDBName);
 
   final realm = Realm(config);
-
-  // print('Initialize nodes ...');
-  // final List<Node> nodes = nodesJsonData
-  //     .map((n) =>
-  //         Node(n['id'], n['lat'], n['lon'], ways: List.castFrom(n['ways'])))
-  //     .toList();
-
-  // print('Initialize ways ...');
-  // final List<Way> ways = waysJsonData
-  //     .map((w) => Way(w['id'], w['oneway'],
-  //         name: w['name'], nodes: List.castFrom(w['nodes'])))
-  //     .toList();
-
-  // print('Initialize edges ...');
-  // final edges = edgesJsonData
-  //     .map((e) => Connection(e['n1'], e['n2'], e['way'], e['dist']));
-
+  
   print('Initialize nodes ...');
   final List<Node> nodes =
       nodesJsonData.map((n) => Node(n['id'], n['lat'], n['lon'])).toList();
